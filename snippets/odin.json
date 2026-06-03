@@ -35,6 +35,30 @@
             "}"
         ]
     },
+    "struct": {
+        "prefix": ["struct"],
+        "body": [
+            "$1 :: struct {",
+            "",
+            "}"
+        ]
+    },
+    "union": {
+        "prefix": ["union"],
+        "body": [
+            "$1 :: union {",
+            "",
+            "}"
+        ]
+    },
+    "enum": {
+        "prefix": ["enum"],
+        "body": [
+            "$1 :: enum {",
+            "",
+            "}"
+        ]
+    },
     "const": {
         "prefix": ["const"],
         "body": ["$1 :: $0"]
