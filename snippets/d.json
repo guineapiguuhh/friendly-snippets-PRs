@@ -1,0 +1,194 @@
+{
+    "Module": {
+        "prefix": "module",
+        "body": "module $1;$0"
+    },
+
+    "Import": {
+        "prefix": "import",
+        "body": "import $1;$0"
+    },
+    "Static import": {
+        "prefix": "static import",
+        "body": "static import $1;$0"
+    },
+
+    "Alias this": {
+        "prefix": "alias",
+        "body": "alias $1 this;$0"
+    },
+    "Alias": {
+        "prefix": "alias",
+        "body": "alias $1 = $2;$0"
+    },
+    "Struct": {
+        "prefix": "struct",
+        "body": ["struct $1", "{", "$0", "}"]
+    },
+    "Class": {
+        "prefix": "class",
+        "body": ["class $1", "{", "$0", "}"]
+    },
+    "Interface": {
+        "prefix": "interface",
+        "body": ["interface $1", "{", "$0", "}"]
+    },
+    "Union": {
+        "prefix": "union",
+        "body": ["union $1", "{", "$0", "}"]
+    },
+    "Single member enum": {
+        "prefix": "senum",
+        "body": "enum $1 = $2;$0"
+    },
+    "Enum": {
+        "prefix": "enum",
+        "body": ["enum $1", "{", "$0", "}"]
+    },
+
+    "Version": {
+        "prefix": "version",
+        "body": ["version ($1)", "{", "$0", "}"]
+    },
+    "Debug": {
+        "prefix": "debug",
+        "body": ["debug", "{", "$0", "}"]
+    },
+    "Static if": {
+        "prefix": "static if",
+        "body": ["static if ($1)", "{", "$0", "}"]
+    },
+    "Else static if": {
+        "prefix": "else static if",
+        "body": ["else static if ($1)", "{", "$0", "}"]
+    },
+    "Scope": {
+        "prefix": "scope",
+        "body": ["scope ($1)", "{", "$0", "}"]
+    },
+    "With": {
+        "prefix": "with",
+        "body": ["with ($1)", "{", "$0", "}"]
+    },
+    "If": {
+        "prefix": "if",
+        "body": ["if ($1)", "{", "$0", "}"]
+    },
+    "Else if": {
+        "prefix": "else if",
+        "body": ["else if ($1)", "{", "$0", "}"]
+    },
+    "Else": {
+        "prefix": "else",
+        "body": ["else", "{", "$0", "}"]
+    },
+    "Switch": {
+        "prefix": "switch",
+        "body": ["switch ($1)", "{", "$0", "}"]
+    },
+    "Final switch": {
+        "prefix": "final switch",
+        "body": ["final switch ($1)", "{", "$0", "}"]
+    },
+    "Case": {
+        "prefix": "case",
+        "body": ["case $1:", "    $0"]
+    },
+    "Default": {
+        "prefix": "default",
+        "body": ["default:", "    $0"]
+    },
+    "While": {
+        "prefix": "while",
+        "body": ["while ($1)", "{", "$0", "}"]
+    },
+    "Do while": {
+        "prefix": "do while",
+        "body": ["do", "{", "$0", "} while ($1);"]
+    },
+    "Indexed for loop": {
+        "prefix": "fori",
+        "body": ["for (${1:size_t} ${2:i}; $2 < ${3:count}; $2++)", "{", "$0", "}"]
+    },
+    "For each": {
+        "prefix": "foreach",
+        "body": ["foreach (${2:item}; $1)", "{", "$0", "}"]
+    },
+    "Static for each": {
+        "prefix": "static foreach",
+        "body": ["static foreach (${2:item}; $1)", "{", "$0", "}"]
+    },
+
+    "Constructor": {
+        "prefix": "construct",
+        "body": ["this($1)", "{", "$0", "}"]
+    },
+    "Destructor": {
+        "prefix": "desctructor",
+        "body": ["~this()", "{", "$0", "}"]
+    },
+
+    "In": {
+        "prefix": "in",
+        "body": ["in", "{", "$0", "}"]
+    },
+    "Out": {
+        "prefix": "out",
+        "body": ["out (${1:result})", "{", "$0", "}"]
+    },
+    "Do": {
+        "prefix": "do",
+        "body": ["do", "{", "$0", "}"]
+    },
+
+    "Template mixin": {
+        "prefix": "mixint",
+        "body": "mixin $1!$2;$0"
+    },
+    "Mixin": {
+        "prefix": "mixin",
+        "body": "mixin($1);$0"
+    },
+    "Traits": {
+        "prefix": "traits",
+        "body": "__traits($1);$0"
+    },
+    "Static assert": {
+        "prefix": "static assert",
+        "body": "static assert($1);$0"
+    },
+    "Assert": {
+        "prefix": "assert",
+        "body": "assert($1);$0"
+    },
+    "Pragma": {
+        "prefix": "pragma",
+        "body": "pragma($1);$0"
+    },
+
+    "Try": {
+        "prefix": "try",
+        "body": ["try", "{", "$0", "}"]
+    },
+    "Catch": {
+        "prefix": "catch",
+        "body": ["catch ($1)", "{", "$0", "}"]
+    },
+    "Finally": {
+        "prefix": "finally",
+        "body": ["finally", "{", "$0", "}"]
+    },
+
+    "Asm": {
+        "prefix": "asm",
+        "body": ["asm", "{", "$0", "}"]
+    },
+    "Unsafe unit test": {
+        "prefix": "testu",
+        "body": ["unittest", "{", "$0", "}"]
+    },
+    "Unit test": {
+        "prefix": "test",
+        "body": ["unittest @safe pure", "{", "$0", "}"]
+    }
+}
