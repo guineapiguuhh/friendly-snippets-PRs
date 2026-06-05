@@ -14,7 +14,7 @@
     },
 
     "Alias this": {
-        "prefix": "alias",
+        "prefix": "alias this",
         "body": "alias $1 this;$0"
     },
     "Alias": {
@@ -23,19 +23,19 @@
     },
     "Struct": {
         "prefix": "struct",
-        "body": ["struct $1", "{", "$0", "}"]
+        "body": ["struct $1", "{", "    $0", "}"]
     },
     "Class": {
         "prefix": "class",
-        "body": ["class $1", "{", "$0", "}"]
+        "body": ["class $1", "{", "    $0", "}"]
     },
     "Interface": {
         "prefix": "interface",
-        "body": ["interface $1", "{", "$0", "}"]
+        "body": ["interface $1", "{", "    $0", "}"]
     },
     "Union": {
         "prefix": "union",
-        "body": ["union $1", "{", "$0", "}"]
+        "body": ["union $1", "{", "    $0", "}"]
     },
     "Single member enum": {
         "prefix": "senum",
@@ -43,52 +43,52 @@
     },
     "Enum": {
         "prefix": "enum",
-        "body": ["enum $1", "{", "$0", "}"]
+        "body": ["enum $1", "{", "    $0", "}"]
     },
 
     "Version": {
         "prefix": "version",
-        "body": ["version ($1)", "{", "$0", "}"]
+        "body": ["version ($1)", "{", "    $0", "}"]
     },
     "Debug": {
         "prefix": "debug",
-        "body": ["debug", "{", "$0", "}"]
+        "body": ["debug", "{", "    $0", "}"]
     },
     "Static if": {
         "prefix": "static if",
-        "body": ["static if ($1)", "{", "$0", "}"]
+        "body": ["static if ($1)", "{", "    $0", "}"]
     },
     "Else static if": {
         "prefix": "else static if",
-        "body": ["else static if ($1)", "{", "$0", "}"]
+        "body": ["else static if ($1)", "{", "    $0", "}"]
     },
     "Scope": {
         "prefix": "scope",
-        "body": ["scope ($1)", "{", "$0", "}"]
+        "body": ["scope ($1)", "{", "    $0", "}"]
     },
     "With": {
         "prefix": "with",
-        "body": ["with ($1)", "{", "$0", "}"]
+        "body": ["with ($1)", "{", "    $0", "}"]
     },
     "If": {
         "prefix": "if",
-        "body": ["if ($1)", "{", "$0", "}"]
+        "body": ["if ($1)", "{", "    $0", "}"]
     },
     "Else if": {
         "prefix": "else if",
-        "body": ["else if ($1)", "{", "$0", "}"]
+        "body": ["else if ($1)", "{", "    $0", "}"]
     },
     "Else": {
         "prefix": "else",
-        "body": ["else", "{", "$0", "}"]
+        "body": ["else", "{", "    $0", "}"]
     },
     "Switch": {
         "prefix": "switch",
-        "body": ["switch ($1)", "{", "$0", "}"]
+        "body": ["switch ($1)", "{", "    $0", "}"]
     },
     "Final switch": {
         "prefix": "final switch",
-        "body": ["final switch ($1)", "{", "$0", "}"]
+        "body": ["final switch ($1)", "{", "    $0", "}"]
     },
     "Case": {
         "prefix": "case",
@@ -100,45 +100,45 @@
     },
     "While": {
         "prefix": "while",
-        "body": ["while ($1)", "{", "$0", "}"]
+        "body": ["while ($1)", "{", "    $0", "}"]
     },
     "Do while": {
         "prefix": "do while",
-        "body": ["do", "{", "$0", "} while ($1);"]
+        "body": ["do", "{", "    $0", "} while ($1);"]
     },
     "Indexed for loop": {
         "prefix": "fori",
-        "body": ["for (${1:size_t} ${2:i}; $2 < ${3:count}; $2++)", "{", "$0", "}"]
+        "body": ["for (${1:size_t} ${2:i}; $2 < ${3:count}; $2++)", "{", "    $0", "}"]
     },
     "For each": {
         "prefix": "foreach",
-        "body": ["foreach (${2:item}; $1)", "{", "$0", "}"]
+        "body": ["foreach (${2:item}; $1)", "{", "    $0", "}"]
     },
     "Static for each": {
         "prefix": "static foreach",
-        "body": ["static foreach (${2:item}; $1)", "{", "$0", "}"]
+        "body": ["static foreach (${2:item}; $1)", "{", "    $0", "}"]
     },
 
     "Constructor": {
         "prefix": "construct",
-        "body": ["this($1)", "{", "$0", "}"]
+        "body": ["this($1)", "{", "    $0", "}"]
     },
     "Destructor": {
         "prefix": "desctructor",
-        "body": ["~this()", "{", "$0", "}"]
+        "body": ["~this()", "{", "    $0", "}"]
     },
 
     "In": {
         "prefix": "in",
-        "body": ["in", "{", "$0", "}"]
+        "body": ["in", "{", "    $0", "}"]
     },
     "Out": {
         "prefix": "out",
-        "body": ["out (${1:result})", "{", "$0", "}"]
+        "body": ["out (${1:result})", "{", "    $0", "}"]
     },
     "Do": {
         "prefix": "do",
-        "body": ["do", "{", "$0", "}"]
+        "body": ["do", "{", "    $0", "}"]
     },
 
     "Template mixin": {
@@ -168,27 +168,23 @@
 
     "Try": {
         "prefix": "try",
-        "body": ["try", "{", "$0", "}"]
+        "body": ["try", "{", "    $0", "}"]
     },
     "Catch": {
         "prefix": "catch",
-        "body": ["catch ($1)", "{", "$0", "}"]
+        "body": ["catch ($1)", "{", "    $0", "}"]
     },
     "Finally": {
         "prefix": "finally",
-        "body": ["finally", "{", "$0", "}"]
+        "body": ["finally", "{", "    $0", "}"]
     },
 
     "Asm": {
         "prefix": "asm",
-        "body": ["asm", "{", "$0", "}"]
-    },
-    "Unsafe unit test": {
-        "prefix": "testu",
-        "body": ["unittest", "{", "$0", "}"]
+        "body": ["asm", "{", "    $0", "}"]
     },
     "Unit test": {
         "prefix": "test",
-        "body": ["unittest @safe pure", "{", "$0", "}"]
+        "body": ["unittest", "{", "    $0", "}"]
     }
 }
