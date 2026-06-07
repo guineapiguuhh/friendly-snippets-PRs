@@ -19,11 +19,11 @@
 
     "Main": {
         "prefix": "main",
-        "body": ["void main()", "{", "$0", "}"]
+        "body": ["void main()", "{", "    $0", "}"]
     },
     "Main with arguments": {
         "prefix": "maina",
-        "body": ["void main(string[] args)", "{", "$0", "}"]
+        "body": ["void main(string[] args)", "{", "    $0", "}"]
     },
 
     "Alias this": {
