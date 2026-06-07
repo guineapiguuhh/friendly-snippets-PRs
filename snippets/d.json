@@ -1,16 +1,29 @@
 {
+    "Comment block": {
+        "prefix": "/",
+        "body": "/*$0 */"
+    },
+    "Multiline comment": {
+        "prefix": "//",
+        "body": ["/*$0", " */"]
+    },
+
     "Module": {
         "prefix": "module",
         "body": "module $1;$0"
     },
-
     "Import": {
         "prefix": "import",
         "body": "import $1;$0"
     },
-    "Static import": {
-        "prefix": "static import",
-        "body": "static import $1;$0"
+
+    "Main": {
+        "prefix": "main",
+        "body": ["void main()", "{", "$0", "}"]
+    },
+    "Main with arguments": {
+        "prefix": "maina",
+        "body": ["void main(string[] args)", "{", "$0", "}"]
     },
 
     "Alias this": {
@@ -37,13 +50,17 @@
         "prefix": "union",
         "body": ["union $1", "{", "    $0", "}"]
     },
-    "Single member enum": {
-        "prefix": "senum",
-        "body": "enum $1 = $2;$0"
-    },
     "Enum": {
         "prefix": "enum",
         "body": ["enum $1", "{", "    $0", "}"]
+    },
+    "Mixin template": {
+        "prefix": "mixin template",
+        "body": ["mixin template $1($2)", "{", "    $0", "}"]
+    },
+    "Template": {
+        "prefix": "template",
+        "body": ["template $1($2)", "{", "    $0", "}"]
     },
 
     "Version": {
@@ -53,14 +70,6 @@
     "Debug": {
         "prefix": "debug",
         "body": ["debug", "{", "    $0", "}"]
-    },
-    "Static if": {
-        "prefix": "static if",
-        "body": ["static if ($1)", "{", "    $0", "}"]
-    },
-    "Else static if": {
-        "prefix": "else static if",
-        "body": ["else static if ($1)", "{", "    $0", "}"]
     },
     "Scope": {
         "prefix": "scope",
@@ -74,6 +83,10 @@
         "prefix": "if",
         "body": ["if ($1)", "{", "    $0", "}"]
     },
+    "Else static if": {
+        "prefix": "else static if",
+        "body": ["else static if ($1)", "{", "    $0", "}"]
+    },
     "Else if": {
         "prefix": "else if",
         "body": ["else if ($1)", "{", "    $0", "}"]
@@ -86,17 +99,13 @@
         "prefix": "switch",
         "body": ["switch ($1)", "{", "    $0", "}"]
     },
-    "Final switch": {
-        "prefix": "final switch",
-        "body": ["final switch ($1)", "{", "    $0", "}"]
-    },
     "Case": {
         "prefix": "case",
-        "body": ["case $1:", "    $0"]
+        "body": ["case $1:", "    $0", "    break;"]
     },
     "Default": {
         "prefix": "default",
-        "body": ["default:", "    $0"]
+        "body": ["default:", "    $0", "    break;"]
     },
     "While": {
         "prefix": "while",
@@ -107,24 +116,28 @@
         "body": ["do", "{", "    $0", "} while ($1);"]
     },
     "Indexed for loop": {
-        "prefix": "fori",
+        "prefix": "for",
         "body": ["for (${1:size_t} ${2:i}; $2 < ${3:count}; $2++)", "{", "    $0", "}"]
+    },
+    "Reversed indexed for loop": {
+        "prefix": "forr",
+        "body": ["for (${1:size_t} ${2:i} = ${3:count}; $2 >= 0; $2--)", "{", "    $0", "}"]
     },
     "For each": {
         "prefix": "foreach",
         "body": ["foreach (${2:item}; $1)", "{", "    $0", "}"]
     },
-    "Static for each": {
-        "prefix": "static foreach",
-        "body": ["static foreach (${2:item}; $1)", "{", "    $0", "}"]
+    "For each reverse": {
+        "prefix": "foreach_reverse",
+        "body": ["foreach_reverse (${2:item}; $1)", "{", "    $0", "}"]
     },
 
     "Constructor": {
-        "prefix": "construct",
+        "prefix": "constructor",
         "body": ["this($1)", "{", "    $0", "}"]
     },
     "Destructor": {
-        "prefix": "desctructor",
+        "prefix": "destructor",
         "body": ["~this()", "{", "    $0", "}"]
     },
 
@@ -141,29 +154,29 @@
         "body": ["do", "{", "    $0", "}"]
     },
 
-    "Template mixin": {
-        "prefix": "mixint",
-        "body": "mixin $1!$2;$0"
-    },
-    "Mixin": {
-        "prefix": "mixin",
-        "body": "mixin($1);$0"
-    },
     "Traits": {
         "prefix": "traits",
         "body": "__traits($1);$0"
-    },
-    "Static assert": {
-        "prefix": "static assert",
-        "body": "static assert($1);$0"
     },
     "Assert": {
         "prefix": "assert",
         "body": "assert($1);$0"
     },
+    "Deprecated": {
+        "prefix": "deprecated",
+        "body": "deprecated($1)$0"
+    },
     "Pragma": {
         "prefix": "pragma",
-        "body": "pragma($1);$0"
+        "body": "pragma($1)$0"
+    },
+    "Inline": {
+        "prefix": "inline",
+        "body": "pragma(inline, true)$0"
+    },
+    "No inline": {
+        "prefix": "noinline",
+        "body": "pragma(inline, false)$0"
     },
 
     "Try": {
@@ -182,6 +195,10 @@
     "Asm": {
         "prefix": "asm",
         "body": ["asm", "{", "    $0", "}"]
+    },
+    "Extern": {
+        "prefix": "extern",
+        "body": "extern($1)$0"
     },
     "Unit test": {
         "prefix": "test",
