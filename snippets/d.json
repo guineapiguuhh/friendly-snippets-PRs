@@ -156,11 +156,11 @@
 
     "Traits": {
         "prefix": "traits",
-        "body": "__traits($1);$0"
+        "body": "__traits($1)$0"
     },
     "Assert": {
         "prefix": "assert",
-        "body": "assert($1);$0"
+        "body": "assert($1)$0"
     },
     "Deprecated": {
         "prefix": "deprecated",
@@ -170,6 +170,34 @@
         "prefix": "pragma",
         "body": "pragma($1)$0"
     },
+    "Mangle": {
+        "prefix": "mangle",
+        "body": "pragma(mangle, $1)$0"
+    },
+    "Start address": {
+        "prefix": "startaddress",
+        "body": "pragma(startaddress, $1);$0"
+    },
+    "Msg": {
+        "prefix": "msg",
+        "body": "pragma(msg, $1);$0"
+    },
+    "Crt constructor": {
+        "prefix": "crt_constructor",
+        "body": "pragma(crt_constructor, $1)$0"
+    },
+    "Crt destructor": {
+        "prefix": "crt_destructor",
+        "body": "pragma(crt_destructor, $1)$0"
+    },
+    "Linker directive": {
+        "prefix": "linkerDirective",
+        "body": "pragma(linkerDirective, $1);$0"
+    },
+    "Lib": {
+        "prefix": "lib",
+        "body": "pragma(lib, $1);$0"
+    },
     "Inline": {
         "prefix": "inline",
         "body": "pragma(inline, true)$0"
@@ -177,6 +205,10 @@
     "No inline": {
         "prefix": "noinline",
         "body": "pragma(inline, false)$0"
+    },
+    "Align": {
+        "prefix": "align",
+        "body": "align($1)$0"
     },
 
     "Try": {
