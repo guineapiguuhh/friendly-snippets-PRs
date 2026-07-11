@@ -1,0 +1,234 @@
+{
+    "Require": {
+        "prefix": "require",
+        "body": "require \"$1\"$0"
+    },
+    "Exception block": {
+        "prefix": "begin",
+        "body": [
+            "begin",
+            "  $1",
+            "rescue ${2:exception} : ${3:Exception} ",
+            "  $0",
+            "end"
+        ]
+    },
+    "Exception block with ensure": {
+        "prefix": "begin ensure",
+        "body": [
+            "begin",
+            "  $1",
+            "rescue ${2:exception} : ${3:Exception} ",
+            "  $4",
+            "ensure",
+            "  $0",
+            "end"
+        ]
+    },
+    "Exception block with ensure and else": {
+        "prefix": "begin else",
+        "body": [
+            "begin",
+            "  $1",
+            "rescue ${2:exception} : ${3:Exception} ",
+            "  $4",
+            "ensure",
+            "  $5",
+            "else",
+            "  $0",
+            "end"
+        ]
+    },
+    "Enum definition": {
+        "prefix": "enum",
+        "body": [
+            "enum ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Annotation definition": {
+        "prefix": "annotation",
+        "body": [
+            "annotation ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Struct definition": {
+        "prefix": "struct",
+        "body": [
+            "struct ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Class definition": {
+        "prefix": "class",
+        "body": [
+            "class ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Union definition": {
+        "prefix": "union",
+        "body": [
+            "union ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Typedef": {
+        "prefix": "type",
+        "body": "type ${1:Name} = ${2:Type}$0"
+    },
+    "Alias": {
+        "prefix": "alias",
+        "body": "alias ${1:Name} = ${2:Type}$0"
+    },
+    "Module definition": {
+        "prefix": "module",
+        "body": [
+            "module ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Lib": {
+        "prefix": "lib",
+        "body": [
+            "lib ${1:Name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Constructor": {
+        "prefix": "init",
+        "body": [
+            "def initialize($1)",
+            "  $0",
+            "end"
+        ]
+    },
+    "Method definition": {
+        "prefix": "def",
+        "body": [
+            "def ${1:name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Static method definition": {
+        "prefix": "defs",
+        "body": [
+            "def self.${1:name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Macro definition": {
+        "prefix": "macro",
+        "body": [
+            "macro ${1:name}",
+            "  $0",
+            "end"
+        ]
+    },
+    "If": {
+        "prefix": "if",
+        "body": [
+            "if ${1:condition}",
+            "  $0",
+            "end"
+        ]
+    },
+    "If else": {
+        "prefix": "ife",
+        "body": [
+            "if ${1:condition}",
+            "  $2",
+            "else",
+            "  $0",
+            "end"
+        ]
+    },
+    "If elsif": {
+        "prefix": "ifei",
+        "body": [
+            "if ${1:condition}",
+            "  $2",
+            "elsif ${3:condition}",
+            "  $0",
+            "end"
+        ]
+    },
+    "If elsif else": {
+        "prefix": "ifee",
+        "body": [
+            "if ${1:condition}",
+            "  $2",
+            "elsif ${3:condition}",
+            "  $4",
+            "else",
+            "  $0",
+            "end"
+        ]
+    },
+    "Block": {
+        "prefix": "do",
+        "body": [
+            "do",
+            "  $0",
+            "end"
+        ]
+    },
+    "Short block": {
+        "prefix": "b",
+        "body": "{ |x| $0 }"
+    },
+    "While": {
+        "prefix": "while",
+        "body": [
+            "while ${1:condition}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Until": {
+        "prefix": "until",
+        "body": [
+            "until ${1:condition}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Loop": {
+        "prefix": "loop",
+        "body": [
+            "loop do",
+            "  $0",
+            "end"
+        ]
+    },
+    "Unless": {
+        "prefix": "unless",
+        "body": [
+            "unless ${1:condition}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Case": {
+        "prefix": "case",
+        "body": [
+            "case ${1:value}",
+            "  $0",
+            "end"
+        ]
+    },
+    "Comptime block": {
+        "prefix": "ct",
+        "body": "{%${1:content}%}$0"
+    }
+}

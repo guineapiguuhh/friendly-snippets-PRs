@@ -141,6 +141,10 @@
                 "path": "./snippets/ruby/ruby.json"
             },
             {
+                "language": "crystal",
+                "path": "./snippets/crystal.json"
+            },
+            {
                 "language": "rdoc",
                 "path": "./snippets/ruby/rdoc.json"
             },
