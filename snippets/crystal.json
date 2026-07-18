@@ -183,9 +183,21 @@
             "end"
         ]
     },
+    "Block with arguments": {
+        "prefix": "doa",
+        "body": [
+            "do |$1|",
+            "  $0",
+            "end"
+        ]
+    },
+    "Short block with arguments": {
+        "prefix": "ba",
+        "body": "{ |$1| $0 }"
+    },
     "Short block": {
         "prefix": "b",
-        "body": "{ |x| $0 }"
+        "body": "{ $0 }"
     },
     "While": {
         "prefix": "while",
@@ -250,7 +262,7 @@
     "Comptime for": {
         "prefix": "cfor",
         "body": [
-            "{%for #{1:item} in ${2:list}%}",
+            "{%for ${1:item} in ${2:list}%}",
             "  $0",
             "{%end%}"
         ]
